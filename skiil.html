@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills - Krishna Yadav</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      background: linear-gradient(-45deg, #f5f7fa, #c3cfe2, #e0eafc, #cfd9df);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      overflow: hidden;
+      perspective: 1000px;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #333;
+      margin-bottom: 50px;
+      text-align: center;
+      z-index: 10;
+      position: relative;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      width: 100%;
+      max-width: 1200px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s, box-shadow 0.5s;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      position: relative;
+      transform-style: preserve-3d;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .skill-card:nth-child(1) { animation-delay: 0.2s; }
+    .skill-card:nth-child(2) { animation-delay: 0.4s; }
+    .skill-card:nth-child(3) { animation-delay: 0.6s; }
+    .skill-card:nth-child(4) { animation-delay: 0.8s; }
+    .skill-card:nth-child(5) { animation-delay: 1s; }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .skill-card::before {
+      content: "";
+      position: absolute;
+      top: -5px; left: -5px; right: -5px; bottom: -5px;
+      border-radius: 25px;
+      background: linear-gradient(45deg, #6a11cb, #2575fc, #ff6a00, #ff0066);
+      z-index: -1;
+      filter: blur(15px);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .skill-card:hover::before {
+      opacity: 1;
+    }
+
+    .skill-card:hover {
+      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    }
+
+    .skill-icon {
+      font-size: 3rem;
+      color: #2575fc;
+      margin-bottom: 15px;
+    }
+
+    .skill-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .progress-circle {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(#2575fc 0%, #2575fc 0%, #e0e0e0 0%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      transition: background 1.5s;
+    }
+
+    .progress-circle span {
+      position: absolute;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .skill-description {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .progress-circle {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    /* Particle styles */
+    .particle {
+      position: absolute;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float 10s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) translateX(50px) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Skills</h1>
+
+  <div class="skills-container">
+    <div class="skill-card">
+      <i class="fab fa-html5 skill-icon"></i>
+      <div class="skill-title">HTML & CSS</div>
+      <div class="progress-circle" data-percentage="95">
+        <span>0%</span>
+      </div>
+      <p class="skill-description">Building responsive and modern web layouts.</p>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-js-square skill-icon"></i>
+      <div class="skill-title">JavaScript</div>
+      <div class="progress-circle" data-percentage="85">
+        <span>0%</span>
+      </div>
+      <p class="skill-description">Dynamic web functionalities and interactive UI elements.</p>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-react skill-icon"></i>
+      <div class="skill-title">React JS</div>
+      <div class="progress-circle" data-percentage="80">
+        <span>0%</span>
+      </div>
+      <p class="skill-description">Building scalable, component-based web applications.</p>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-python skill-icon"></i>
+      <div class="skill-title">Python</div>
+      <div class="progress-circle" data-percentage="75">
+        <span>0%</span>
+      </div>
+      <p class="skill-description">Scripting, automation, and data processing.</p>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-pencil-ruler skill-icon"></i>
+      <div class="skill-title">SQL</div>
+      <div class="progress-circle" data-percentage="70">
+        <span>0%</span>
+      </div>
+      <p class="skill-description">.</p>
+    </div>
+  </div>
+
+  <script>
+    // Animate circular progress bars
+    document.querySelectorAll('.progress-circle').forEach(circle => {
+      let percentage = circle.getAttribute('data-percentage');
+      let span = circle.querySelector('span');
+      let current = 0;
+      let interval = setInterval(() => {
+        if(current >= percentage) clearInterval(interval);
+        else {
+          current++;
+          span.textContent = current + '%';
+          circle.style.background = `conic-gradient(#2575fc 0% ${current}%, #e0e0e0 ${current}% 100%)`;
+        }
+      }, 15);
+    });
+
+    // Create particles
+    const particleCount = 50;
+    for(let i=0; i<particleCount; i++){
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      const size = Math.random() * 6 + 3;
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      particle.style.left = Math.random() * window.innerWidth + 'px';
+      particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+      particle.style.opacity = Math.random();
+      document.body.appendChild(particle);
+    }
+
+    // Parallax hover effect
+    const cards = document.querySelectorAll('.skill-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 10; 
+        const rotateY = ((x - centerX) / centerX) * 10;
+        card.style.transform = `rotateX(${ -rotateX }deg) rotateY(${ rotateY }deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+      });
+    });
+  </script>
+
+</body>
+</html>
+

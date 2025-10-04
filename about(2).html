@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Krishna</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      background: #f4f9ff;
+      color: #111;
+      padding: 50px 0;
+    }
+
+    /* Snowflake animation */
+    .snowflake {
+      position: absolute;
+      top: -10px;
+      width: 6px;
+      height: 6px;
+      background: rgba(173, 216, 230, 0.7);
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(1.5px);
+      box-shadow: 0 0 8px rgba(173, 216, 230, 0.6), 0 0 15px rgba(173, 216, 230, 0.3);
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) translateX(0); opacity: 0.7; }
+      100% { transform: translateY(110vh) translateX(20px); opacity: 0.1; }
+    }
+
+    /* Card wrapper */
+    .card-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Professional Card */
+    .card {
+      background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+    }
+
+    .card-header h1 {
+      font-size: 32px;
+      color: #222;
+    }
+
+    /* About Content */
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .about-content h2 {
+      font-size: 26px;
+      color: #222;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    .about-content p {
+      font-size: 16px;
+    }
+
+    /* Interactive info cards */
+    .info-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .info-card {
+      background: #e1f5fe;
+      padding: 15px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-weight: 500;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Interactive hobby badges */
+    .hobbies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hobby-badge {
+      background: #e1f5fe;
+      color: #0277bd;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: default;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+    }
+
+    .hobby-badge:hover {
+      transform: translateY(-4px);
+      background: #0277bd;
+      color: #ffffff;
+    }
+
+  </style>
+</head>
+<body>
+
+<script>
+  // Snowflakes
+  const snowCount = 60;
+  const snowflakes = [];
+  for (let i = 0; i < snowCount; i++) {
+    const snow = document.createElement('div');
+    snow.classList.add('snowflake');
+    snow.style.left = Math.random() * 100 + 'vw';
+    snow.style.width = snow.style.height = Math.random() * 6 + 4 + 'px';
+    snow.style.opacity = Math.random() * 0.5 + 0.3;
+    snow.style.animationDuration = Math.random() * 10 + 8 + 's';
+    snow.style.animationDelay = Math.random() * 5 + 's';
+    document.body.appendChild(snow);
+    snowflakes.push({el: snow, speed: Math.random() * 0.5 + 0.2});
+  }
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    snowflakes.forEach(s => {
+      s.el.style.transform = `translateY(${scrollY * s.speed}px)`;
+    });
+  });
+</script>
+
+<!-- About Card -->
+<div class="card-wrap">
+  <div class="card">
+    <div class="card-header">
+      <h1>Krishna Yadav</h1>
+    </div>
+
+    <div class="about-content">
+      <h2>Bio</h2>
+      <p>I’m a final-year BS (Honors) Physics with Data Science student with strong interests in electronics, trading, and technology. Currently working on hands-on electronics projects and learning algorithmic trading, I’m passionate about merging my analytical background in physics with financial knowledge to pursue a career in fintech  where innovation, data, and finance intersect..</p>
+
+      <h2>Personal Info</h2>
+      <div class="info-list">
+        <div class="info-card"><b>Age:</b> 21</div>
+        <div class="info-card"><b>Address:</b> Varanasi, UTTAR PRADESH, 232110</div>
+        <div class="info-card"><b>Email:</b> athletekrishna@gmail.com</div>
+        <div class="info-card"><b>Phone:</b> +91-9580042288</div>
+      </div>
+
+      <h2>Hobbies</h2>
+      <div class="hobbies">
+        <div class="hobby-badge">Coding</div>
+        <div class="hobby-badge">Reading</div>
+        <div class="hobby-badge">Gaming</div>
+        <div class="hobby-badge">Traveling</div>
+        <div class="hobby-badge">Music</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

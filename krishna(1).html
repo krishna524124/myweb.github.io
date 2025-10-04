@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Krishna</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { min-height: 100vh; overflow-x: hidden; position: relative; background: none; color: #111; }
+
+    /* HERO section */
+    .hero { position: relative; width: 100%; height: 40vh; background: url('rohit-tandon-9wg5jCEPBsw-unsplash.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; }
+
+    /* Navbar */
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 18px 50px; display: flex; justify-content: space-between; align-items: center; color: #fff; z-index: 100; background: rgba(0, 0, 0, 0.2); backdrop-filter: blur(6px); }
+    .navbar .logo { font-size: 22px; font-weight: bold; letter-spacing: 1px; }
+    .navbar ul { list-style: none; display: flex; gap: 25px; }
+    .navbar ul li a { text-decoration: none; color: #fff; font-weight: 500; transition: color 0.3s; }
+    .navbar ul li a:hover { color: #27ae60; }
+
+    /* Card wrapper */
+    .card-wrap { max-width: 1000px; margin: -150px auto 50px; padding: 0 20px; position: relative; z-index: 10; }
+
+    /* Professional Card */
+    .card { background: linear-gradient(to bottom right, #ffffff, #f9f9f9); border-radius: 25px; padding: 50px; box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 25px rgba(39, 174, 96, 0.2); display: flex; flex-direction: column; gap: 30px; animation: fadeInUp 1s ease forwards; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+    .card-header { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 15px; }
+    .card-header img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.2); transition: transform 0.3s; }
+    .card-header img:hover { transform: scale(1.05); }
+    .card-header h1 { font-size: 36px; color: #222; }
+    .card-header p.intro { text-align: center; color: #555; margin-top: 15px; line-height: 1.5; max-width: 700px; }
+
+    /* Skills Section */
+    .skills-section { display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; }
+    .skills-box { flex: 1; min-width: 300px; }
+    .skills-box h3 { margin-bottom: 15px; color: #27ae60; font-size: 20px; }
+    .skill { margin-bottom: 12px; }
+    .skill p { margin-bottom: 6px; font-size: 14px; color: #333; }
+    .skill-bar { width: 100%; height: 6px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
+    .skill-fill { height: 100%; border-radius: 4px; transition: width 1s ease-in-out; }
+    .photoshop { width: 60%; background: #3498db; }
+    .illustrator { width: 70%; background: #27ae60; }
+    .sketch { width: 75%; background: #f39c12; }
+    .communication { width: 80%; background: #3498db; }
+    .language { width: 85%; background: #27ae60; }
+    .knowledge { width: 75%; background: #f39c12; }
+
+    /* Blinking Message Icon */
+    .message-icon { position: fixed; bottom: 80px; right: 20px; width: 55px; height: 55px; background: #27ae60; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 200; animation: blink 1.2s infinite; transition: transform 0.2s ease; }
+    @keyframes blink { 0%, 50%, 100% { opacity: 1; transform: scale(1); } 25%, 75% { opacity: 0.5; transform: scale(1.1); } }
+    .message-icon:hover { transform: scale(1.2); }
+
+    /* Message Form */
+    .message-form { position: fixed; bottom: 80px; right: 90px; width: 300px; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); display: none; z-index: 210; }
+    .message-form h3 { margin-bottom: 10px; font-size: 18px; color: #27ae60; }
+    .message-form input, .message-form textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px; }
+    .message-form button { width: 100%; padding: 10px; border: none; background: #27ae60; color: #fff; font-weight: bold; border-radius: 6px; cursor: pointer; }
+    .message-form button:hover { background: #219150; }
+
+    /* Footer */
+    footer { text-align: center; padding: 16px 0; background: #e1f5fe; color: #0277bd; font-weight: 500; margin-top: 50px; border-top: 1px solid #cce4f6; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <div class="logo">Krishna</div>
+  <ul>
+    <li><a href="about(2).html">About</a></li>
+    <li><a href="skiil.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<!-- Hero -->
+<div class="hero"></div>
+
+<!-- Card -->
+<div class="card-wrap">
+  <div class="card">
+    <div class="card-header">
+      <img src="Untitled design (1).png" alt="Profile Photo">
+      <h1>Krishna Yadav</h1>
+      <p class="intro">I am Krishna, a passionate learner with a keen interest in data analysis and programming. I enjoy exploring new technologies, solving challenging problems, and turning ideas into real projects.</p>
+    </div>
+
+    <!-- Skills -->
+    <div class="skills-section">
+      <div class="skills-box">
+        <h3>Technical Skills</h3>
+        <div class="skill"><p>python</p><div class="skill-bar"><div class="skill-fill photoshop"></div></div></div>
+        <div class="skill"><p>SQL</p><div class="skill-bar"><div class="skill-fill illustrator"></div></div></div>
+        <div class="skill"><p>technical analysis</p><div class="skill-bar"><div class="skill-fill sketch"></div></div></div>
+      </div>
+      <div class="skills-box">
+        <h3>Soft Skills</h3>
+        <div class="skill"><p>Communication</p><div class="skill-bar"><div class="skill-fill communication"></div></div></div>
+        <div class="skill"><p> critical thinking</p><div class="skill-bar"><div class="skill-fill language"></div></div></div>
+        <div class="skill"><p>Problem Solving</p><div class="skill-bar"><div class="skill-fill knowledge"></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Message Icon -->
+<div class="message-icon" id="msgIcon">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="26" height="26">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+  </svg>
+</div>
+
+<!-- Message Form -->
+<div class="message-form" id="msgForm">
+  <h3>Send Message</h3>
+  <form action="https://formspree.io/f/myznpgkr" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <textarea name="message" rows="3" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<!-- Footer -->
+<footer>© <span id="yr"></span> Krishna Yadav — Built with ❤️</footer>
+
+<script>
+  // Message icon toggle
+  const msgIcon = document.getElementById('msgIcon');
+  const msgForm = document.getElementById('msgForm');
+
+  msgIcon.addEventListener('click', function(e) {
+    e.stopPropagation(); // prevent document click from closing immediately
+    msgForm.style.display = (msgForm.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Close form when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!msgForm.contains(e.target) && !msgIcon.contains(e.target)) {
+      msgForm.style.display = 'none';
+    }
+  });
+
+  // Set current year in footer
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
